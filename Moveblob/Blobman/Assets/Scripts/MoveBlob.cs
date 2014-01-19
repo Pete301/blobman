@@ -60,17 +60,43 @@ public class MoveBlob : MonoBehaviour
 		startTime = Time.time;
 	}
 	
-	void Jump ()
+	void Jump (float X, float Y)
 	{
 		direction = prevDir;
-		if (endPos > startPos)
+
+		//tapping away from the blob causes the blob to face in the direction tapped, without moving (WiP)
+		if (endPos > (startPos.x + 10000))
 		{
-			if 
+			ChooseDirection (X, Y, startPos, endPos);
+			switch (direction)
+			{
+			case move.MoveRight:
+				blobman.ShowFrame (7);
+				break;
+			}
 		}
-		ChooseDirection (prevDir);
+		MoveDirection (prevDir);
+	}
+
+	void ChooseDirection (float X, float Y, Vector3 dX, float dY)
+	{
+		if (X > Y)
+		{
+			if (dX.x > dY)
+				direction = move.MoveRight;
+			else if (dX.x < dY)
+				direction = move.MoveLeft;
+		}
+		else if (X < Y)
+		{
+			if (dX.x > dY)
+				direction = move.MoveDown;
+			else if (dX.x < dY)
+				direction = move.MoveUp;
+		}
 	}
 	
-	void ChooseDirection (move _direction)
+	void MoveDirection (move _direction)
 	{
 		switch (_direction)
 		{							
@@ -94,7 +120,7 @@ public class MoveBlob : MonoBehaviour
 				moveDest.y += 2;
 				break;
 			case move.Jump:
-				Jump();
+				Jump(absX, absY);
 				jump = true;
 				break;
 		}
@@ -126,20 +152,8 @@ public class MoveBlob : MonoBehaviour
 						
 			//obtain and store the direction of the swipe
 		
-			if (absX > absY)
-			{
-				if (touch.deltaPosition.x > touch.deltaPosition.y)
-					direction = move.MoveRight;
-				else if (touch.deltaPosition.x < touch.deltaPosition.y)
-					direction = move.MoveLeft;
-			}
-			else if (absX < absY)
-			{
-				if (touch.deltaPosition.x > touch.deltaPosition.y)
-					direction = move.MoveDown;
-				else if (touch.deltaPosition.x < touch.deltaPosition.y)
-					direction = move.MoveUp;
-			}		
+
+			ChooseDirection (absX, absY, touch.deltaPosition, touch.deltaPosition.y);
 			
 			jump = false;
 
@@ -162,7 +176,7 @@ public class MoveBlob : MonoBehaviour
 					duration = 2.0f;
 				}
 				
-				ChooseDirection (direction);
+				MoveDirection (direction);
 				
 				Move (moveDest);
 				
