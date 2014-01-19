@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>Dirt Corner.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{115,115}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{115,115}}</string>
+                <key>sourceSize</key>
+                <string>{115,115}</string>
+            </dict>
+            <key>Dirt Raised.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{119,2},{115,115}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{115,115}}</string>
+                <key>sourceSize</key>
+                <string>{115,115}</string>
+            </dict>
+            <key>Dirt Straight.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,119},{115,115}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{115,115}}</string>
+                <key>sourceSize</key>
+                <string>{115,115}</string>
+            </dict>
+            <key>Dirt unpassable.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{119,119},{115,115}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{115,115}}</string>
+                <key>sourceSize</key>
+                <string>{115,115}</string>
+            </dict>
+            <key>Dirt unpassable2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,236},{115,115}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{115,115}}</string>
+                <key>sourceSize</key>
+                <string>{115,115}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>DirtGround.png</string>
+            <key>size</key>
+            <string>{256,512}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:82999980f7560500afda479058587cc9:1/1$</string>
+            <key>textureFileName</key>
+            <string>DirtGround.png</string>
+        </dict>
+    </dict>
+</plist>
